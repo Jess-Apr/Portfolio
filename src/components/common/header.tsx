@@ -8,8 +8,8 @@ export default function Header() {
     ]
 
     return (
-        <nav className="fixed w-full flex justify-between bg-white bg-opacity-80 text-soft-black py-5 px-20 shadow-md">
-            <div className="w-full mx-auto md:px-12 lg:px-20 xl:px-28 flex justify-between items-center py-3">
+        <nav className="fixed w-full flex justify-between bg-white bg-opacity-80 text-soft-black py-5 shadow-md z-10">
+            <div className="w-full px-12 md:px-28 lg:px-40 xl:px-64 flex justify-between items-center">
                 <span className="text-xl font-bold cursor-default">Jessie's Portfolio</span>
                 <ul className="flex space-x-10 items-center">
                     {tabs.map((tab) => (

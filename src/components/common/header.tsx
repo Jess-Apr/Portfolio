@@ -9,13 +9,13 @@ export default function Header() {
 
     return (
         <nav className="fixed w-full flex justify-between bg-white bg-opacity-80 text-soft-black py-5 px-20 shadow-md">
-            <span className="text-xl font-extrabold cursor-default">Jessie's Portfolio</span>
-            <ul className="flex space-x-10">
+            <span className="text-xl font-bold cursor-default">Jessie's Portfolio</span>
+            <ul className="flex space-x-10 items-center">
                 {tabs.map((tab) => (
-                    <li>
+                    <li key={tab.text}>
                         <Link
                             href={tab.link}
-                            className="hover:border-b hover:border-b-soft-black transition-colors duration-200 font-extrabold"
+                            className="hover:border-b hover:border-b-soft-black transition-colors duration-200 font-normal"
                         >
                             {tab.text}
                         </Link>

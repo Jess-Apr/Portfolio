@@ -9,7 +9,7 @@ export default function Header() {
     const tabs = [
         { text: "About", link: "/about", match: ["/", "/about"] },
         { text: "Skills", link: "/skills", match: ["/skills"] },
-        { text: "Projects", link: "/projects", match: ["/projects", /^\/projects\/.*/] }, // 정규식 추가
+        { text: "Projects", link: "/projects", match: ["/projects", /^\/projects\/.*/] },
     ]
 
     return (
@@ -28,7 +28,7 @@ export default function Header() {
                                     href={tab.link}
                                     className={`transition-colors duration-200 ${
                                         isActive
-                                            ? "font-bold cursor-default"
+                                            ? "font-semibold cursor-default"
                                             : "hover:border-b hover:border-b-soft-black"
                                     }`}
                                 >

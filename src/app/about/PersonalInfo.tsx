@@ -1,6 +1,6 @@
-import EmailIcon from "@assets/icons/ic_email.svg"
-import GithubIcon from "@assets/icons/ic_github.svg"
-import VelogIcon from "@assets/icons/ic_velog.svg"
+import EmailIcon from "@public/assets/icons/ic_about_email.svg"
+import GithubIcon from "@public/assets/icons/ic_about_github.svg"
+import VelogIcon from "@public/assets/icons/ic_about_velog.svg"
 
 export default function PersonalInfo() {
     return (

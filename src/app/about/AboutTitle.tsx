@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ProfileImage from "@assets/images/profile_image.png"
+import ProfileImage from "@public/assets/images/profile_image.png"
 
 export default function AboutTitle() {
     return (

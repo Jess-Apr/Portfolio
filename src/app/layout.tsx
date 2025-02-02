@@ -14,7 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${pretendard.variable}`}>
             <body className={pretendard.className}>
                 <Header />
-                {children}
+                <div className="w-full min-h-full flex justify-center items-center pt-[108px] pb-10 px-6 sm:px-12">
+                    {children}
+                </div>
             </body>
         </html>
     )

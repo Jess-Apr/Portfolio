@@ -7,6 +7,12 @@ body {
     height: 100%;
 }
 
+span,
+p,
+li {
+    cursor: default;
+}
+
 @font-face {
     font-family: "Pretendard";
     src: url("/fonts/PretendardVariable.woff2") format("woff2");

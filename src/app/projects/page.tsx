@@ -21,7 +21,7 @@ export default function ProjectsPage() {
                                 <h3 className="text-lg font-semibold text-black group-hover:text-gray-700 transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-sm text-gray-600 mt-2">{project.desc}</p>
+                                <p className="text-sm text-gray-600 mt-2 cursor-pointer">{project.desc}</p>
                             </div>
                         </div>
                     </Link>

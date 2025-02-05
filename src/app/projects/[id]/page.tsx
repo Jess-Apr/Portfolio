@@ -1,21 +1,24 @@
-import Link from "next/link"
+"use client"
+
+import { use } from "react"
 import ImageCarousel from "./ImageCarousel"
 import ProjectInfo from "./ProjectInfo"
 import ProjectTechStack from "./ProjectTechStack"
 import ProjectTasks from "./ProjectTasks"
 import ProjectImprovements from "./ProjectImprovements"
 import ProjectTroubleShooting from "./ProjectTroubleShooting"
+import BackButton from "./BackButton"
 
 interface ProjectDetailPageProps {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }
 
 export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-    const { id } = params
+    const { id } = use(params)
 
     return (
         <div className="w-full max-w-6xl min-h-screen bg-white text-soft-black">
-            <Link href={"/projects"}>뒤로가기</Link>
+            <BackButton />
             <h1 className="text-4xl font-bold mb-6">{id} Project</h1>
             <ImageCarousel />
             <ProjectInfo />

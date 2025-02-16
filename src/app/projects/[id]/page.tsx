@@ -1,20 +1,18 @@
 import ImageCarousel from "./ImageCarousel"
 import ProjectInfo from "./ProjectInfo"
 import ProjectTechStack from "./ProjectTechStack"
-import ProjectTasks from "./ProjectTasks"
-import ProjectImprovements from "./ProjectImprovements"
-import ProjectTroubleShooting from "./ProjectTroubleShooting"
+import ProjectTasks from "./project-tasks/ProjectTasks"
+import ProjectImprovements from "./project-improvements/ProjectImprovements"
 import BackButton from "./BackButton"
-import { lingpick } from "./project-details"
-import { projectDataMapper } from "./project-data-mapper"
+import { lingpick } from "./data/project-details"
+import { projectDataMapper } from "./data/project-data-mapper"
 
 interface ProjectDetailPageProps {
     params: { id: string }
 }
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-    const { id } = params
-    console.log("id: ", id)
+export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+    const { id } = await params
     const projectData = projectDataMapper[id]
 
     return (
@@ -22,11 +20,10 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             <BackButton />
             <h1 className="text-4xl font-bold mb-6">{lingpick.title}</h1>
             <ImageCarousel />
-            <ProjectInfo />
-            <ProjectTechStack />
-            <ProjectTasks tasks={projectData.tasks} />
-            <ProjectImprovements />
-            <ProjectTroubleShooting />
+            <ProjectInfo info={projectData.info} />
+            <ProjectTechStack techStack={projectData.techStack} />
+            <ProjectTasks title="주요 작업 내용" tasks={projectData.tasks} />
+            {projectData.improvements ? <ProjectImprovements improvements={projectData.improvements} /> : null}
         </div>
     )
 }

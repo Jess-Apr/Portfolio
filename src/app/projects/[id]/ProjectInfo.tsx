@@ -1,19 +1,26 @@
-export default function ProjectInfo() {
+interface ProjectInfoProps {
+    info: {
+        desc: string
+        period: string
+        participants: string
+        role: string
+    }
+}
+
+export default function ProjectInfo({ info }: ProjectInfoProps) {
     return (
         <section className="w-full mb-8">
-            <h2 className="text-2xl font-semibold mb-4">프로젝트 소개</h2>
+            <h2 className="text-2xl font-semibold mb-2">프로젝트 소개</h2>
+            <p className="mb-6 text-lg">{info.desc}</p>
             <ul className="space-y-2 text-lg">
                 <li>
-                    <strong>간단 소개:</strong> 이 프로젝트는 ...
+                    <strong>진행 기간:</strong> {info.period}
                 </li>
                 <li>
-                    <strong>진행 기간:</strong> 2023.01 - 2023.06
+                    <strong>진행 인원:</strong> {info.participants}
                 </li>
                 <li>
-                    <strong>진행 인원:</strong> 4명
-                </li>
-                <li>
-                    <strong>담당 업무:</strong> 프론트엔드 개발, UI/UX 개선
+                    <strong>담당 업무:</strong> {info.role}
                 </li>
             </ul>
         </section>

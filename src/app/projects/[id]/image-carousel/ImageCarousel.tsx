@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 export default function ImageCarousel() {
     const [currentIndex, setCurrentIndex] = useState(1)
+    const [displayIndex, setDisplayIndex] = useState(1)
     const [transition, setTransition] = useState(true)
     const [isBtnDisabled, setIsBtnDisabled] = useState(false)
     const items = [1, 2, 3]
@@ -40,6 +41,14 @@ export default function ImageCarousel() {
     }
 
     useEffect(() => {
+        if (currentIndex === 0) {
+            setDisplayIndex(items.length)
+        } else if (currentIndex === extendedItems.length - 1) {
+            setDisplayIndex(1)
+        } else {
+            setDisplayIndex(currentIndex)
+        }
+
         let timeoutId: NodeJS.Timeout
 
         if (currentIndex === 0) {
@@ -101,7 +110,7 @@ export default function ImageCarousel() {
                     <button
                         key={index}
                         className={`w-2 h-2 rounded-full transition-all duration-300 
-                                   ${currentIndex === index + 1 ? "bg-gray-800" : "bg-gray-400"}`}
+                                   ${displayIndex === index + 1 ? "bg-gray-800" : "bg-gray-400"}`}
                         onClick={() => goToSlide(index)}
                     />
                 ))}

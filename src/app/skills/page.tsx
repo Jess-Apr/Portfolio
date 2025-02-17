@@ -1,4 +1,4 @@
-import { skillsText } from "./skills-text"
+import { skillsText } from "@data/skills-text"
 
 export default function SkillsPage() {
     return (

@@ -1,4 +1,4 @@
-import { introText } from "./intro-text"
+import { introText } from "@data/intro-text"
 
 export default function Introduction() {
     return (

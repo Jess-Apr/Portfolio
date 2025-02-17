@@ -1,5 +1,5 @@
-import { HighlightedText } from "src/utils/HighlightedText"
-import { TaskType } from "../data/project-details"
+import { TaskType } from "@data/project-details"
+import { HighlightedText } from "@utils/HighlightedText"
 
 interface ProjectImprovementsItemListProps {
     improvements: TaskType[]

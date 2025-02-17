@@ -4,7 +4,7 @@ import ProjectTechStack from "./ProjectTechStack"
 import ProjectTasks from "./project-tasks/ProjectTasks"
 import ProjectImprovements from "./project-improvements/ProjectImprovements"
 import BackButton from "./BackButton"
-import { projectDataMapper } from "./data/project-data-mapper"
+import { projectDataMapper } from "@data/project-details-data-mapper"
 
 interface ProjectDetailPageProps {
     params: { id: string }

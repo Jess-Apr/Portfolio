@@ -1,5 +1,5 @@
-import { TaskType } from "@data/project-details"
 import ProjectTasksList from "./ProjectTasksItem"
+import { TaskType } from "@data/project-details"
 
 interface ProjectTasksProps {
     title: string

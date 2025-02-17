@@ -1,5 +1,5 @@
-import { TaskType } from "@data/project-details"
 import ProjectImprovementsItem from "./ProjectImprovementsItem"
+import { TaskType } from "@data/project-details"
 
 interface ProjectImprovementsProps {
     improvements: TaskType[]

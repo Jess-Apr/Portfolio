@@ -1,5 +1,5 @@
-import LeftChevronIcon from "@public/assets/icons/ic_project-detail_chevron_left.svg"
-import RightChevronIcon from "@public/assets/icons/ic_project-detail_chevron_right.svg"
+import LeftChevronIcon from "@assets/icons/ic_project-detail_chevron_left.svg"
+import RightChevronIcon from "@assets/icons/ic_project-detail_chevron_right.svg"
 
 interface SlideButtonProps {
     changeSlide: (direction: "prev" | "next") => void

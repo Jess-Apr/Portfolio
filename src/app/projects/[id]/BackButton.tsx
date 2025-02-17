@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import BackArrowIcon from "@public/assets/icons/ic_project-detail_back-arrow.svg"
+import BackArrowIcon from "@assets/icons/ic_project-detail_back-arrow.svg"
 
 export default function BackButton() {
     const router = useRouter()

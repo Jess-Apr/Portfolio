@@ -7,7 +7,7 @@ import BackButton from "./BackButton"
 import { projectDataMapper } from "@data/project-details-data-mapper"
 
 interface ProjectDetailPageProps {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {

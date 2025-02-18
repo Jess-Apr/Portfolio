@@ -5,13 +5,16 @@ import SlideIndicator from "./SlideIndicator"
 import SlideButton from "./SlideButton"
 import ImageSlide from "./ImageSlide"
 
-export default function ImageCarousel() {
+interface ImageCarouselProps {
+    images: string[]
+}
+
+export default function ImageCarousel({ images }: ImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(1)
     const [displayIndex, setDisplayIndex] = useState(1)
     const [transition, setTransition] = useState(true)
     const [isBtnDisabled, setIsBtnDisabled] = useState(false)
-    const items = ["1", "2", "3"]
-    const extendedItems = [items[items.length - 1], ...items, items[0]]
+    const extendedImages = [images[images.length - 1], ...images, images[0]]
 
     const disableButtonsTemporarily = () => {
         setIsBtnDisabled(true)
@@ -37,8 +40,8 @@ export default function ImageCarousel() {
 
     useEffect(() => {
         if (currentIndex === 0) {
-            setDisplayIndex(items.length)
-        } else if (currentIndex === extendedItems.length - 1) {
+            setDisplayIndex(images.length)
+        } else if (currentIndex === extendedImages.length - 1) {
             setDisplayIndex(1)
         } else {
             setDisplayIndex(currentIndex)
@@ -48,10 +51,10 @@ export default function ImageCarousel() {
 
         if (currentIndex === 0) {
             timeoutId = setTimeout(() => {
-                setCurrentIndex(extendedItems.length - 2)
+                setCurrentIndex(extendedImages.length - 2)
                 setTransition(false)
             }, 500)
-        } else if (currentIndex === extendedItems.length - 1) {
+        } else if (currentIndex === extendedImages.length - 1) {
             timeoutId = setTimeout(() => {
                 setCurrentIndex(1)
                 setTransition(false)
@@ -61,16 +64,16 @@ export default function ImageCarousel() {
         return () => {
             clearTimeout(timeoutId)
         }
-    }, [currentIndex, extendedItems.length])
+    }, [currentIndex, extendedImages.length])
 
     return (
         <div className="mb-8">
             <div className="relative">
-                <ImageSlide transition={transition} currentIndex={currentIndex} extendedItems={extendedItems} />
+                <ImageSlide transition={transition} currentIndex={currentIndex} extendedImages={extendedImages} />
                 <SlideButton changeSlide={changeSlide} isBtnDisabled={isBtnDisabled} direction="prev" />
                 <SlideButton changeSlide={changeSlide} isBtnDisabled={isBtnDisabled} direction="next" />
             </div>
-            <SlideIndicator items={items} displayIndex={displayIndex} goToSlide={goToSlide} />
+            <SlideIndicator images={images} displayIndex={displayIndex} goToSlide={goToSlide} />
         </div>
     )
 }

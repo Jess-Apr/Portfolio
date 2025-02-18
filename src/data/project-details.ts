@@ -11,9 +11,10 @@ export type ProjectDetail = {
         participants: string
         role: string
     }
-    techStack: string[]
+    techStacks: string[]
     tasks: TaskType[]
     improvements?: TaskType[]
+    images: string[]
 }
 
 export const lingpick: ProjectDetail = {
@@ -24,7 +25,7 @@ export const lingpick: ProjectDetail = {
         participants: "프론트엔드 1인, 백엔드 1인",
         role: "프론트엔드 개발",
     },
-    techStack: ["TypeScript", "React Native", "Recoil", "TanStack Query"],
+    techStacks: ["TypeScript", "React Native", "Recoil", "TanStack Query"],
     tasks: [
         {
             title: "기존에 만들어진 어플리케이션의 퍼포먼스 개선, 기능 추가, 어플리케이션의 UI를 변경하는 고도화 작업 진행",
@@ -148,5 +149,13 @@ export const lingpick: ProjectDetail = {
                 },
             ],
         },
+    ],
+    images: [
+        "/images/lingpick1.png",
+        "/images/lingpick2.png",
+        "/images/lingpick3.png",
+        "/images/lingpick4.png",
+        "/images/lingpick5.png",
+        "/images/lingpick6.png",
     ],
 }

@@ -1,10 +1,12 @@
+import Image from "next/image"
+
 interface ImageSlideProps {
     transition: boolean
     currentIndex: number
-    extendedItems: string[]
+    extendedImages: string[]
 }
 
-export default function ImageSlide({ transition, currentIndex, extendedItems }: ImageSlideProps) {
+export default function ImageSlide({ transition, currentIndex, extendedImages }: ImageSlideProps) {
     return (
         <div className="overflow-hidden rounded-2xl">
             <div
@@ -13,10 +15,16 @@ export default function ImageSlide({ transition, currentIndex, extendedItems }: 
                     transform: `translateX(-${currentIndex * 100}%)`,
                 }}
             >
-                {extendedItems.map((item, index) => (
-                    <div key={index} className={`bg-gray-200 h-96 w-full flex shrink-0 justify-center items-center`}>
-                        {item}
-                    </div>
+                {extendedImages.map((image, index) => (
+                    <Image
+                        key={index}
+                        src={image}
+                        alt={`ProjectI image ${index}`}
+                        width={0}
+                        height={0}
+                        sizes="100vh"
+                        className={`bg-gray-50 object-contain h-[500px] w-full flex shrink-0 justify-center items-center`}
+                    />
                 ))}
             </div>
         </div>

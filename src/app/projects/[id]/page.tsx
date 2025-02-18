@@ -18,9 +18,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <div className="w-full max-w-6xl min-h-screen bg-white text-soft-black">
             <BackButton />
             <h1 className="text-4xl font-bold mb-6">{projectData.title}</h1>
-            <ImageCarousel />
+            <ImageCarousel images={projectData.images} />
             <ProjectInfo info={projectData.info} />
-            <ProjectTechStack techStack={projectData.techStack} />
+            <ProjectTechStack techStacks={projectData.techStacks} />
             <ProjectTasks title="주요 작업 내용" tasks={projectData.tasks} />
             {projectData.improvements ? <ProjectImprovements improvements={projectData.improvements} /> : null}
         </div>

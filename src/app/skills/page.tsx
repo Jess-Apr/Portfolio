@@ -7,7 +7,7 @@ export default function SkillsPage() {
             <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
                 {skillsText.map((skill, index) => (
                     <div key={index} className="flex items-start bg-gray-50 p-5 rounded-lg shadow-md">
-                        <img src={skill.icon} alt={skill.name} width={50} height={50} />
+                        <img src={skill.icon} alt={skill.name} className="w-10 h-10 object-contain" />
                         <div className="ml-4">
                             <span className="block text-lg font-bold text-gray-800">{skill.name}</span>
                             <ul className="mt-2 list-disc list-outside space-y-1 pl-5 text-gray-600">

@@ -10,13 +10,15 @@ export default function ProjectsPage() {
                 {projectList.map((project, index) => (
                     <Link key={index} href={project.path} className="group h-full">
                         <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300  h-full flex flex-col">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={400}
-                                height={250}
-                                className="w-full h-48 object-cover"
-                            />
+                            <div className="py-4 px-10">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    width={300}
+                                    height={250}
+                                    className="w-full h-40 object-contain"
+                                />
+                            </div>
                             <div className="p-5 flex-grow flex flex-col">
                                 <h3 className="text-lg font-semibold text-black group-hover:text-gray-700 transition-colors">
                                     {project.title}

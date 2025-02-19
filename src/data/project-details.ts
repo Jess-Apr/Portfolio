@@ -5,6 +5,7 @@ export type TaskType = {
 
 export type ProjectDetail = {
     title: string
+    type: string
     info: {
         desc: string
         period: string
@@ -19,6 +20,7 @@ export type ProjectDetail = {
 
 export const sitescoop: ProjectDetail = {
     title: "Site Scoop",
+    type: "회사 프로젝트",
     info: {
         desc: "사용자가 지정한 웹 페이지의 테이블을 감지하여 동적 크롤링 후, 데이터를 엑셀 파일로 다운로드할 수 있게 해주는 크롬 확장 프로그램",
         period: "2025.01 ~",
@@ -39,6 +41,7 @@ export const sitescoop: ProjectDetail = {
 
 export const lingpick: ProjectDetail = {
     title: "Lingpick",
+    type: "회사 프로젝트",
     info: {
         desc: "여러 웹사이트와 앱의 링크를 모아서 저장/관리할 수 있고, 인공지능이 저장된 링크를 분석하여 관련 상품을 추천해주는 모바일 앱",
         period: "2024.08 ~ 2025.01",
@@ -182,6 +185,7 @@ export const lingpick: ProjectDetail = {
 
 export const pinnflag: ProjectDetail = {
     title: "PinnFlag",
+    type: "회사 프로젝트",
     info: {
         desc: "외국인들에게 한국 현지 가이드의 여행상품을 판매하고, 여행 정보를 공유할 수 있는 커뮤니티를 제공해주는 플랫폼",
         period: "2024.03 ~",
@@ -280,6 +284,7 @@ export const pinnflag: ProjectDetail = {
 
 export const daygrid: ProjectDetail = {
     title: "DayGrid",
+    type: "팀 프로젝트",
     info: {
         desc: "달력에 일정을 남기거나 디데이 설정을 하여 일정 관리를 할 수 있고, 원하는 날짜에 다이어리를 작성하여 기록할 수 있는 캘린더 웹 어플리케이션",
         period: "2023.10 ~ 2023.11",

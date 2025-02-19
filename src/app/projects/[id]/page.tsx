@@ -5,6 +5,7 @@ import ProjectTasks from "./project-tasks/ProjectTasks"
 import ProjectImprovements from "./project-improvements/ProjectImprovements"
 import BackButton from "./BackButton"
 import { projectDataMapper } from "@data/project-details-data-mapper"
+import ProjectTitle from "./ProjectTitle"
 
 interface ProjectDetailPageProps {
     params: Promise<{ id: string }>
@@ -17,7 +18,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     return (
         <div className="w-full max-w-6xl min-h-screen bg-white text-soft-black">
             <BackButton />
-            <h1 className="text-4xl font-bold mb-6">{projectData.title}</h1>
+            <ProjectTitle title={projectData.title} type={projectData.type} />
             <ImageCarousel images={projectData.images} />
             <ProjectInfo info={projectData.info} />
             <ProjectTechStack techStacks={projectData.techStacks} />

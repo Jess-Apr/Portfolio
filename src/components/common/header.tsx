@@ -27,9 +27,7 @@ export default function Header() {
                                 <Link
                                     href={tab.link}
                                     className={`transition-colors duration-200 ${
-                                        isActive
-                                            ? "font-semibold cursor-default"
-                                            : "hover:border-b hover:border-b-soft-black"
+                                        isActive ? "font-semibold" : "hover:border-b hover:border-b-soft-black"
                                     }`}
                                 >
                                     {tab.text}

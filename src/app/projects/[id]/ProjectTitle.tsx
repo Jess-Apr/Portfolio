@@ -11,7 +11,7 @@ const typeBadgeColors: Record<string, string> = {
 
 export default async function ProjectTitle({ title, type }: ProjectTitleProps) {
     return (
-        <h1 className="text-4xl font-bold mb-6 flex items-center">
+        <h1 className="text-4xl font-bold mb-2 flex items-center">
             {title}
             <span className={`ml-3 px-3 py-1 text-sm font-semibold rounded-lg bg-blue-100 text-blue-700`}>{type}</span>
         </h1>

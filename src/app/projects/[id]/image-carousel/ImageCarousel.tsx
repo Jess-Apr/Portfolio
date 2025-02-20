@@ -67,7 +67,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
     }, [currentIndex, extendedImages.length])
 
     return (
-        <div className="mb-8">
+        <div className="mt-6 mb-8">
             <div className="relative">
                 <ImageSlide transition={transition} currentIndex={currentIndex} extendedImages={extendedImages} />
                 <SlideButton changeSlide={changeSlide} isBtnDisabled={isBtnDisabled} direction="prev" />

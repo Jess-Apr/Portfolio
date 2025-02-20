@@ -6,6 +6,11 @@ export type TaskType = {
 export type ProjectDetail = {
     title: string
     type: string
+    links?: {
+        iconType: string
+        name: string
+        path: string
+    }[]
     info: {
         desc: string
         period: string
@@ -42,6 +47,13 @@ export const sitescoop: ProjectDetail = {
 export const lingpick: ProjectDetail = {
     title: "Lingpick",
     type: "회사 프로젝트",
+    links: [
+        {
+            iconType: "link",
+            name: "App Store",
+            path: "https://apps.apple.com/kr/app/%EB%A7%81%ED%94%BD/id6739575926",
+        },
+    ],
     info: {
         desc: "여러 웹사이트와 앱의 링크를 모아서 저장/관리할 수 있고, 인공지능이 저장된 링크를 분석하여 관련 상품을 추천해주는 모바일 앱",
         period: "2024.08 ~ 2025.01",
@@ -285,6 +297,13 @@ export const pinnflag: ProjectDetail = {
 export const daygrid: ProjectDetail = {
     title: "DayGrid",
     type: "팀 프로젝트",
+    links: [
+        {
+            iconType: "github",
+            name: "Github",
+            path: "https://github.com/Jess-Apr/DayGrid",
+        },
+    ],
     info: {
         desc: "달력에 일정을 남기거나 디데이 설정을 하여 일정 관리를 할 수 있고, 원하는 날짜에 다이어리를 작성하여 기록할 수 있는 캘린더 웹 어플리케이션",
         period: "2023.10 ~ 2023.11",

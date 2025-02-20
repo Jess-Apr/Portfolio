@@ -8,8 +8,8 @@ export default function AboutTitle() {
                 <Image
                     src={ProfileImage}
                     alt="아이디어를 떠올린 모습의 아바타"
-                    className="absolute w-60 h-60 object-none"
-                    style={{ top: "-8px", left: "-10px" }}
+                    className="absolute min-w-[240px] min-h-[240px] w-auto h-auto object-cover"
+                    style={{ top: "-6px", left: "-24px" }}
                 />
             </div>
             <h1 className="flex flex-col flex-1 items-start text-4xl md:text-5xl font-extralight leading-tight">

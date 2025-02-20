@@ -14,7 +14,7 @@ export default function PersonalInfo() {
                     href="https://github.com/Jess-Apr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
+                    className="hover:opacity-70 transition-opacity duration-300"
                 >
                     <GithubIcon />
                 </a>
@@ -23,7 +23,7 @@ export default function PersonalInfo() {
                     href="https://velog.io/@jess_apr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
+                    className="hover:opacity-70 transition-opacity duration-300"
                 >
                     <VelogIcon />
                 </a>

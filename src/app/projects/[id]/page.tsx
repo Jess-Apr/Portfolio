@@ -12,6 +12,10 @@ interface ProjectDetailPageProps {
     params: Promise<{ id: string }>
 }
 
+export function generateStaticParams() {
+    return [{ id: "sitescoop" }, { id: "lingpick" }, { id: "pinnflag" }, { id: "daygrid" }]
+}
+
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
     const { id } = await params
     const projectData = projectDataMapper[id]

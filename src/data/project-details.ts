@@ -28,12 +28,78 @@ export const sitescoop: ProjectDetail = {
     type: "회사 프로젝트",
     info: {
         desc: "사용자가 지정한 웹 페이지의 테이블을 감지하여 동적 크롤링 후, 데이터를 엑셀 파일로 다운로드할 수 있게 해주는 크롬 확장 프로그램",
-        period: "2025.01 ~",
+        period: "2025.01 ~ 진행중",
         participants: "프론트엔드 1인, 백엔드 1인",
         role: "프론트엔드 개발",
     },
-    techStacks: ["JavaScript", "TypeScript", "React", "Jotai", "Tailwind CSS", "Jest"],
-    tasks: [],
+    techStacks: ["TypeScript", "React", "Jotai", "Tailwind CSS", "Jest"],
+    tasks: [
+        {
+            title: "<strong>종단간 암호화(E2EE)</strong> 구현",
+            subtasks: [
+                {
+                    title: "개인정보가 포함된 데이터를 <strong>AES 알고리즘</strong>으로 암호화한 후, <strong>AES 키</strong>는 서버의 <strong>RSA Public Key</strong>로 암호화하여 전달",
+                },
+                {
+                    title: "응답 데이터 암호화가 필요한 경우, 클라이언트에서 <strong>RSA 키를 생성</strong>하고 요청 헤더에 <strong>Public Key</strong>를 포함하여 전송",
+                },
+                {
+                    title: "암·복호화 로직을 Axios Interceptor에 구현하여 모든 요청과 응답에서 자동으로 암·복호화가 수행되도록 설정",
+                },
+            ],
+        },
+        {
+            title: "브라우저 동작 제어 로직 구현",
+            subtasks: [
+                {
+                    title: "Chrome Extension의 Content Script를 활용하여 사용자가 크롤링할 테이블을 직접 선택할 수 있도록 기능 제공",
+                },
+            ],
+        },
+        {
+            title: "웹 크롤링 기능 개발",
+            subtasks: [
+                {
+                    title: "다양한 웹사이트의 테이블 패턴을 분석하여 최대한 많은 페이지에서 크롤링이 가능하도록 구현",
+                },
+                {
+                    title: "페이지네이션 버튼을 감지하여 자동으로 페이지를 이동하며 여러 페이지를 크롤링할 수 있도록 개발",
+                },
+            ],
+        },
+        {
+            title: "데이터 필터링 기능 개발",
+            subtasks: [
+                {
+                    title: "사용자가 원하는 키워드를 기준으로 <strong>포함(AND), 선택(OR), 제외(NOT)</strong> 조건을 설정할 수 있는 필터링 로직 구현",
+                },
+            ],
+        },
+        {
+            title: "핵심 로직의 <strong>단위 테스트</strong> 수행",
+            subtasks: [
+                {
+                    title: "암·복호화 로직 모듈화 및 테스트",
+                    subtasks: [
+                        {
+                            title: "단위 테스트가 가능하도록 암·복호화 로직을 <strong>독립적인 모듈<strong>로 분리",
+                        },
+                        {
+                            title: "다양한 데이터 구조를 테스트하여 <strong>중첩된 구조<strong>의 데이터도 정상적으로 암·복호화되는지 검증",
+                        },
+                    ],
+                },
+                {
+                    title: "데이터 필터링 로직 테스트",
+                    subtasks: [
+                        {
+                            title: "다양한 필터링 조건 조합에서도 필터링이 정상적으로 적용되는지 단위 테스트 수행",
+                        },
+                    ],
+                },
+            ],
+        },
+    ],
     images: [
         `${process.env.NEXT_PUBLIC_BASE_PATH}/images/sitescoop1.png`,
         `${process.env.NEXT_PUBLIC_BASE_PATH}/images/sitescoop2.png`,
@@ -80,7 +146,7 @@ export const lingpick: ProjectDetail = {
             ],
         },
         {
-            title: "웹 크롤링 기능 구현",
+            title: "웹 크롤링 기능 개선",
             subtasks: [
                 {
                     title: "Swift, Kotlin 코드로 구현되어있던 크롤링 기능을 <strong>타입스크립트 코드로 통합하여 유지보수성 높임</strong>",
@@ -200,7 +266,7 @@ export const pinnflag: ProjectDetail = {
     type: "회사 프로젝트",
     info: {
         desc: "외국인들에게 한국 현지 가이드의 여행상품을 판매하고, 여행 정보를 공유할 수 있는 커뮤니티를 제공해주는 플랫폼",
-        period: "2024.03 ~",
+        period: "2024.03 ~ 진행중",
         participants: "프론트엔드 1인, 백엔드 1인",
         role: "프론트엔드 개발",
     },

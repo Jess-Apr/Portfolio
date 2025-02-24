@@ -82,10 +82,10 @@ export const sitescoop: ProjectDetail = {
                     title: "암·복호화 로직 모듈화 및 테스트",
                     subtasks: [
                         {
-                            title: "단위 테스트가 가능하도록 암·복호화 로직을 <strong>독립적인 모듈<strong>로 분리",
+                            title: "단위 테스트가 가능하도록 암·복호화 로직을 <strong>독립적인 모듈</strong>로 분리",
                         },
                         {
-                            title: "다양한 데이터 구조를 테스트하여 <strong>중첩된 구조<strong>의 데이터도 정상적으로 암·복호화되는지 검증",
+                            title: "다양한 데이터 구조를 테스트하여 <strong>중첩된 구조</strong>의 데이터도 정상적으로 암·복호화되는지 검증",
                         },
                     ],
                 },
@@ -132,13 +132,13 @@ export const lingpick: ProjectDetail = {
             title: "기존에 만들어진 어플리케이션의 퍼포먼스 개선, 기능 추가, 어플리케이션의 UI를 변경하는 고도화 작업 진행",
         },
         {
-            title: "Android 개발 환경 설정 및 빌드 환경 분리",
+            title: "Android <strong>개발 환경 설정</strong> 및 <strong>빌드 환경 분리</strong>",
         },
         {
             title: "카카오톡, 네이버, 구글, 메타, 애플 소셜 로그인 기능 구현",
         },
         {
-            title: "S3 이미지 업로드 로직 구현",
+            title: "<strong>S3 이미지 업로드</strong> 로직 구현",
             subtasks: [
                 {
                     title: "서버에서 S3 업로드 URL을 받아 이미지를 업로드한 뒤, 성공 시 S3로부터 받은 이미지 ID를 서버로 전송",
@@ -160,16 +160,16 @@ export const lingpick: ProjectDetail = {
             title: "링크 공유 기능 구현 (Android)",
             subtasks: [
                 {
-                    title: "앱 전환 없이 링크 저장 UI를 호출할 수 있도록 별도의 Activity를 Kotlin으로 구현",
+                    title: "앱 전환 없이 링크 저장 UI를 호출할 수 있도록 Kotlin으로 별도의 Activity를 구현",
                 },
                 {
-                    title: "React Native의 <strong>Native Module</strong> 기능을 활용, 네이티브 코드에서 받은 데이터를 React Native로 전송하여 타입스크립트 기뱐의 웹 크롤링 로직을 거칠 수 있도록 함",
+                    title: "React Native의 <strong>Native Module</strong> 기능을 활용하여 네이티브 코드에서 받은 데이터를 React Native로 전달, 타입스크립트 기반의 웹 크롤링 로직을 거치도록 연동",
                 },
                 {
-                    title: "링크 저장 페이지는 바텀시트 UI 스타일로 설계하여 사용자가 익숙하고 자연스러운 경험을 느낄 수 있도록 디자인",
+                    title: "링크 저장 페이지는 바텀시트 UI 스타일로 설계하여 사용자에게 익숙하고 자연스러운 경험을 제공",
                 },
                 {
-                    title: "사용자가 외부 어플리케이션의 링크를 저장하려 할 때, Lingpick 앱으로 이동하지 않고 바로 저장 할 수 있도록 하여 사용자의 작업 흐름을 방해하지 않으면서도 직관적이고 원활한 앱 사용 경험 제공",
+                    title: "링크 저장 시 Lingpick 앱으로 이동하지 않고 바로 저장 가능하도록 구현하여, 사용자의 작업 흐름을 방해하지 않으면서 직관적이고 원활한 앱 사용 경험 제공",
                 },
             ],
         },
@@ -182,7 +182,7 @@ export const lingpick: ProjectDetail = {
                     title: "<strong>문제:</strong> 좋아요 버튼 클릭 시, 좋아요 수를 업데이트 하기 위해 무한 스크롤의 모든 링크를 다시 불러오는 과정에서 딜레이 발생",
                 },
                 {
-                    title: "<strong>해결:</strong> 실시간 데이터 반영보다는 빠른 피드백이 중요하다고 판단. Tanstack Query의 Optimistic Updates 기능을 사용해 좋아요가 눌린 링크의 숫자만 변경.",
+                    title: "<strong>해결:</strong> 실시간 데이터 반영보다는 빠른 피드백이 중요하다고 판단. Tanstack Query의 <strong>Optimistic Updates</strong> 기능을 사용해 좋아요가 눌린 링크의 숫자만 변경.",
                 },
                 {
                     title: "<strong>성과:</strong>",
@@ -276,7 +276,7 @@ export const pinnflag: ProjectDetail = {
             title: "<strong>프론트엔드 개발 전반을 주도</strong>하며 작업을 수행",
             subtasks: [
                 {
-                    title: "커뮤니티 게시판, 여행상품 판매 페이지, 관리자 페이지 등 약 30여 개의 화면을 설계 및 구현",
+                    title: "커뮤니티 게시판, 여행상품 판매 페이지, 관리자 페이지 등 20개 이상의 화면을 설계 및 구현",
                 },
                 {
                     title: "회원가입/로그인, 게시글 및 댓글 CRUD, 카테고리 조회 등 주요 기능에 대한 백엔드 API 연동 작업 진행",
@@ -334,16 +334,16 @@ export const pinnflag: ProjectDetail = {
             ],
         },
         {
-            title: "효율적인 협업을 위한 <strong>작업 우선순위 문서화 도입 및 적용</strong>",
+            title: "효율적인 협업을 위한 <strong>작업 우선순위 문서화 제안 및 적용</strong>",
             subtasks: [
                 {
-                    title: "클라이언트, 프론트엔드, 백엔드 간 우선순위 불일치로 인한 작업 지연 문제를 해결하기 위해 문서화 프로세스 제안 및 실행",
+                    title: "클라이언트, 프론트엔드, 백엔드 간 우선순위 불일치로 인한 작업 지연 문제를 해결하기 위해 문서화 프로세스 제안",
                 },
                 {
-                    title: "Google Docs를 활용해 구성원들이 각자의 작업 우선순위를 공유하고, 주간 미팅에서 이를 기반으로 작업 순서 조정 및 진행 상황 점검",
+                    title: "Google Docs를 활용해 구성원들의 작업 우선순위를 공유하고, 주간 미팅에서 이를 기반으로 작업 순서 조정 및 진행 상황 점검",
                 },
                 {
-                    title: "클라이언트와 약속된 기능의 누락을 줄이고, 개발 진행 속도를 향상시켜 마일스톤 목표를 안정적으로 달성",
+                    title: "개발 진행 속도를 향상시키고 마일스톤 목표를 안정적으로 달성",
                 },
             ],
         },
@@ -379,7 +379,7 @@ export const daygrid: ProjectDetail = {
     techStacks: ["TypeScript", "React", "Redux Toolkit", "Tanstack Query", "Node.js", "Express", "MySQL"],
     tasks: [
         {
-            title: "<strong>Access token</strong>과 <strong>Refresh token<strong>을 활용한 유저 인증 로직 구현",
+            title: "<strong>Access token</strong>과 <strong>Refresh token</strong>을 활용한 유저 인증 로직 구현",
             subtasks: [
                 {
                     title: "Axios 인터셉터를 이용하여 각 요청마다 Access token을 자동 삽입하며, 토큰 만료 시 Refresh token으로 토큰 재발급을 받을 수 있도록 설정",

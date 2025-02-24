@@ -10,7 +10,7 @@ export default function ProjectTasksList({ tasks, isRoot }: ProjectTasksListProp
     if (!tasks || tasks.length === 0) return null
 
     return (
-        <ul className={`list-disc pl-6 ${isRoot ? "space-y-3" : ""}`}>
+        <ul className={`pl-6 ${isRoot ? "space-y-3 list-disc" : "list-[circle]"}`}>
             {tasks.map((task, index) => (
                 <li key={index}>
                     <section className="mb-2">

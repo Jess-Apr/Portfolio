@@ -16,6 +16,7 @@ export default async function ProjectLink({ links }: ProjectLinkProps) {
         <>
             {links.map((link) => (
                 <a
+                    key={link.path}
                     href={link.path}
                     target="_blank"
                     rel="noopener noreferrer"

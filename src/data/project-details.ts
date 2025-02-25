@@ -35,10 +35,10 @@ export const sitescoop: ProjectDetail = {
     techStacks: ["TypeScript", "React", "Jotai", "Tailwind CSS", "Jest"],
     tasks: [
         {
-            title: "<strong>종단간 암호화(E2EE)</strong> 구현",
+            title: "<strong>필드 단위 암호화(Field-Level Encryption)</strong> 구현",
             subtasks: [
                 {
-                    title: "개인정보가 포함된 데이터를 <strong>AES 알고리즘</strong>으로 암호화한 후, <strong>AES 키</strong>는 서버의 <strong>RSA Public Key</strong>로 암호화하여 전달",
+                    title: "개인정보가 포함된 데이터 필드를 <strong>AES 알고리즘</strong>으로 암호화한 뒤, <strong>AES 키</strong>를 서버의 <strong>RSA Public Key</strong>로 암호화하여 요청 헤더에 포함해 전송",
                 },
                 {
                     title: "응답 데이터 암호화가 필요한 경우, 클라이언트에서 <strong>RSA 키를 생성</strong>하고 요청 헤더에 <strong>Public Key</strong>를 포함하여 전송",

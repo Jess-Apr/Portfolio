@@ -475,7 +475,7 @@ export const daygrid: ProjectDetail = {
                             title: "Access-Control-Allow-Origin에 브라우저의 출처를 명시하여 브라우저의 접근을 허용하도록 설정",
                         },
                         {
-                            title: "답 헤더의 Access-Control-Allow-Credentials 옵션을 true로 설정하여, 브라우저가 응답에 접근 가능하도록 하였음",
+                            title: "응답 헤더의 Access-Control-Allow-Credentials 옵션을 true로 설정하여, 브라우저가 응답에 접근 가능하도록 하였음",
                         },
                         {
                             title: "Access-Controls-Allow-Methods에 브라우저에서 자원을 접근할 때 사용하는 모든 메서드를 명시하여, HTTP 메서드에 상관 없이 접근을 허용",

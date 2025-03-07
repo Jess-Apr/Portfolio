@@ -35,7 +35,7 @@ export const sitescoop: ProjectDetail = {
     techStacks: ["TypeScript", "React", "Jotai", "Tailwind CSS", "Jest"],
     tasks: [
         {
-            title: "<strong>필드 단위 암호화(Field-Level Encryption)</strong> 구현",
+            title: "<strong>클라이언트-서버 암호화</strong> 구현",
             subtasks: [
                 {
                     title: "개인정보가 포함된 데이터 필드를 <strong>AES 알고리즘</strong>으로 암호화한 뒤, <strong>AES 키</strong>를 서버의 <strong>RSA Public Key</strong>로 암호화하여 요청 헤더에 포함해 전송",
@@ -118,6 +118,11 @@ export const lingpick: ProjectDetail = {
             iconType: "link",
             name: "App Store",
             path: "https://apps.apple.com/kr/app/%EB%A7%81%ED%94%BD/id6739575926",
+        },
+        {
+            iconType: "link",
+            name: "Google Play",
+            path: "https://play.google.com/store/apps/details?id=com.lingpick.production&hl=ko",
         },
     ],
     info: {

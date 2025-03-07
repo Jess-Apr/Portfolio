@@ -13,7 +13,7 @@ export default async function ProjectLink({ links }: ProjectLinkProps) {
     if (!links) return null
 
     return (
-        <>
+        <div className="flex items-center gap-2">
             {links.map((link) => (
                 <a
                     key={link.path}
@@ -26,6 +26,6 @@ export default async function ProjectLink({ links }: ProjectLinkProps) {
                     {link.name}
                 </a>
             ))}
-        </>
+        </div>
     )
 }

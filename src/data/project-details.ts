@@ -19,7 +19,7 @@ export type ProjectDetail = {
     }
     techStacks: string[]
     tasks: TaskType[]
-    improvements?: TaskType[]
+    troubleshootings?: TaskType[]
     images: string[]
 }
 
@@ -38,13 +38,13 @@ export const sitescoop: ProjectDetail = {
             title: "<strong>클라이언트-서버 암호화</strong> 구현",
             subtasks: [
                 {
-                    title: "개인정보가 포함된 데이터 필드를 <strong>AES 알고리즘</strong>으로 암호화한 뒤, <strong>AES 키</strong>를 서버의 <strong>RSA Public Key</strong>로 암호화하여 요청 헤더에 포함해 전송",
+                    title: "개인정보가 포함된 데이터 필드를 <strong>AES 알고리즘</strong>으로 암호화한 뒤, AES 키를 <strong>RSA 알고리즘</strong>으로 암호화하여 서버로 전달",
                 },
                 {
                     title: "응답 데이터 암호화가 필요한 경우, 클라이언트에서 <strong>RSA 키를 생성</strong>하고 요청 헤더에 <strong>Public Key</strong>를 포함하여 전송",
                 },
                 {
-                    title: "암·복호화 로직을 Axios Interceptor에 구현하여 모든 요청과 응답에서 자동으로 암·복호화가 수행되도록 설정",
+                    title: "Axios Interceptor에 암·복호화 로직을 적용하여 모든 요청과 응답에서 자동으로 처리되도록 구현",
                 },
             ],
         },
@@ -60,10 +60,13 @@ export const sitescoop: ProjectDetail = {
             title: "웹 크롤링 기능 개발",
             subtasks: [
                 {
-                    title: "다양한 웹사이트의 테이블 패턴을 분석하여 최대한 많은 페이지에서 크롤링이 가능하도록 구현",
+                    title: "여러 웹사이트의 다양한 테이블 패턴을 분석하여 최대한 많은 페이지에서 크롤링이 가능하도록 구현",
                 },
                 {
                     title: "페이지네이션 버튼을 감지하여 자동으로 페이지를 이동하며 여러 페이지를 크롤링할 수 있도록 개발",
+                },
+                {
+                    title: "복잡한 DOM 구조에서도 데이터를 정확히 추출할 수 있도록 <strong>DFS 기반 탐색 로직 구현</strong>",
                 },
             ],
         },
@@ -82,10 +85,10 @@ export const sitescoop: ProjectDetail = {
                     title: "암·복호화 로직 모듈화 및 테스트",
                     subtasks: [
                         {
-                            title: "단위 테스트가 가능하도록 암·복호화 로직을 <strong>독립적인 모듈</strong>로 분리",
+                            title: "암·복호화 로직을 <strong>독립적인 모듈</strong>로 분리하여 재사용성과 테스트 가능성 향상",
                         },
                         {
-                            title: "다양한 데이터 구조를 테스트하여 <strong>중첩된 구조</strong>의 데이터도 정상적으로 암·복호화되는지 검증",
+                            title: "다양한 데이터 구조에서 암·복호화가 정상적으로 작동하는지 검증하여 데이터 무결성 보장",
                         },
                     ],
                 },
@@ -93,9 +96,22 @@ export const sitescoop: ProjectDetail = {
                     title: "데이터 필터링 로직 테스트",
                     subtasks: [
                         {
-                            title: "다양한 필터링 조건 조합에서도 필터링이 정상적으로 적용되는지 단위 테스트 수행",
+                            title: "AND, OR, NOT 조건 조합 테스트를 수행하여 엣지 케이스에서도 정확한 필터링이 적용됨을 검증",
                         },
                     ],
+                },
+            ],
+        },
+    ],
+    troubleshootings: [
+        {
+            title: "RSA 키 생성 최적화",
+            subtasks: [
+                {
+                    title: "<strong>문제:</strong> RSA 키 생성 시, 복잡한 연산으로 인해 메인 스레드가 블로킹되어 화면 멈춤 현상 발생",
+                },
+                {
+                    title: "<strong>해결:</strong> Web Worker를 활용해 <strong>RSA 키 생성 작업을 메인 스레드에서 분리</strong>, 비동기 방식으로 수행하여 사용자 인터페이스가 끊김 없이 원활하게 동작하도록 개선",
                 },
             ],
         },
@@ -179,7 +195,7 @@ export const lingpick: ProjectDetail = {
             ],
         },
     ],
-    improvements: [
+    troubleshootings: [
         {
             title: "사용자 인터렉션 최적화",
             subtasks: [
@@ -327,28 +343,38 @@ export const pinnflag: ProjectDetail = {
                 },
             ],
         },
+    ],
+    troubleshootings: [
         {
-            title: "개발자가 아닌 클라이언트와의 <strong>원활한 소통을 위한 시각적 자료 제작</strong>",
+            title: "클라이언트와의 원활한 소통을 위한 시각적 자료 제작",
             subtasks: [
                 {
-                    title: "UI 수정을 제안할 때 Figma로 수정 사항이 적용된 화면을 그린 후 제안 사항과 함께 전달",
+                    title: "<strong>문제:</strong> 비개발자인 클라이언트와 협업할 때, 기술적 용어나 코드 설명이 어려워 의사소통의 오류 발생",
                 },
                 {
-                    title: "복잡한 코드의 흐름을 플로우 차트로 제작하여 코드를 더욱 쉽게 이해할 수 있도록 함",
+                    title: "<strong>해결:</strong>",
+                    subtasks: [
+                        {
+                            title: "UI 수정 제안 시, Figma로 수정된 화면을 디자인하여 직관적인 시각 자료를 제공함으로써 이해도를 높임",
+                        },
+                        {
+                            title: "복잡한 코드의 흐름을 플로우 차트로 시각화하여 기술적 배경이 없어도 쉽게 흐름을 이해할 수 있도록 도움",
+                        },
+                    ],
                 },
             ],
         },
         {
-            title: "효율적인 협업을 위한 <strong>작업 우선순위 문서화 제안 및 적용</strong>",
+            title: "효율적인 협업을 위한 작업 우선순위 문서화 제안 및 적용",
             subtasks: [
                 {
-                    title: "클라이언트, 프론트엔드, 백엔드 간 우선순위 불일치로 인한 작업 지연 문제를 해결하기 위해 문서화 프로세스 제안",
+                    title: "<strong>문제:</strong> 클라이언트, 프론트엔드, 백엔드 간 우선순위 불일치로 인한 작업 지연 문제 발생",
                 },
                 {
-                    title: "Google Docs를 활용해 구성원들의 작업 우선순위를 공유하고, 주간 미팅에서 이를 기반으로 작업 순서 조정 및 진행 상황 점검",
+                    title: "<strong>해결:</strong> Google Docs를 활용해 구성원들의 작업 우선순위를 공유하고, 주간 미팅에서 이를 기반으로 작업 순서 조정 및 진행 상황 점검",
                 },
                 {
-                    title: "개발 진행 속도를 향상시키고 마일스톤 목표를 안정적으로 달성",
+                    title: "<strong>성과:</strong> 개발 진행 속도를 향상시키고 마일스톤 목표를 안정적으로 달성",
                 },
             ],
         },
@@ -447,7 +473,7 @@ export const daygrid: ProjectDetail = {
             title: "CRA를 사용하지 않고, <strong>Webpack과 Babel을 설정</strong>하여 프론트엔드 개발 환경 세팅",
         },
     ],
-    improvements: [
+    troubleshootings: [
         {
             title: "달력 일정 카드 UI 개선",
             subtasks: [

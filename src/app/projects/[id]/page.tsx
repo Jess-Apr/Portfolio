@@ -2,7 +2,7 @@ import ImageCarousel from "./image-carousel/ImageCarousel"
 import ProjectInfo from "./ProjectInfo"
 import ProjectTechStack from "./ProjectTechStack"
 import ProjectTasks from "./project-tasks/ProjectTasks"
-import ProjectImprovements from "./project-improvements/ProjectImprovements"
+import ProjectTroubleshooting from "./project-troubleshooting/ProjectTroubleshooting"
 import BackButton from "./BackButton"
 import { projectDataMapper } from "@data/project-details-data-mapper"
 import ProjectTitle from "./ProjectTitle"
@@ -29,7 +29,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             <ProjectInfo info={projectData.info} />
             <ProjectTechStack techStacks={projectData.techStacks} />
             <ProjectTasks title="주요 작업 내용" tasks={projectData.tasks} />
-            {projectData.improvements ? <ProjectImprovements improvements={projectData.improvements} /> : null}
+            {projectData.troubleshootings ? (
+                <ProjectTroubleshooting troubleshootings={projectData.troubleshootings} />
+            ) : null}
         </div>
     )
 }

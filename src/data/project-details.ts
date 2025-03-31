@@ -38,21 +38,13 @@ export const sitescoop: ProjectDetail = {
             title: "<strong>클라이언트-서버 암호화</strong> 구현",
             subtasks: [
                 {
-                    title: "개인정보가 포함된 데이터 필드를 <strong>AES 알고리즘</strong>으로 암호화한 뒤, AES 키를 <strong>RSA 알고리즘</strong>으로 암호화하여 서버로 전달",
+                    title: "개인정보 필드를 AES로 암호화하고, AES 키를 RSA 암호화하여 <strong>개인정보 전송 보안 강화</strong>",
                 },
                 {
-                    title: "응답 데이터 암호화가 필요한 경우, 클라이언트에서 <strong>RSA 키를 생성</strong>하고 요청 헤더에 <strong>Public Key</strong>를 포함하여 전송",
+                    title: "응답 데이터 암호화가 필요한 경우, 클라이언트에서 RSA 키를 생성하고 요청 헤더에 Public Key를 포함하여 전송",
                 },
                 {
-                    title: "Axios Interceptor에 암·복호화 로직을 적용하여 모든 요청과 응답에서 자동으로 처리되도록 구현",
-                },
-            ],
-        },
-        {
-            title: "브라우저 동작 제어 로직 구현",
-            subtasks: [
-                {
-                    title: "Chrome Extension의 Content Script를 활용하여 사용자가 크롤링할 테이블을 직접 선택할 수 있도록 기능 제공",
+                    title: "Axios Interceptor에 암·복호화 로직을 적용하여 모든 요청과 응답에 자동 암·복호화 처리 적용 (보일러플레이트 코드 최소화)",
                 },
             ],
         },
@@ -60,7 +52,7 @@ export const sitescoop: ProjectDetail = {
             title: "웹 크롤링 기능 개발",
             subtasks: [
                 {
-                    title: "여러 웹사이트의 다양한 테이블 패턴을 분석하여 최대한 많은 페이지에서 크롤링이 가능하도록 구현",
+                    title: "여러 웹사이트의 다양한 테이블 패턴을 분석하여 범용적인 크롤링 로직 구현",
                 },
                 {
                     title: "페이지네이션 버튼을 감지하여 자동으로 페이지를 이동하며 여러 페이지를 크롤링할 수 있도록 개발",
@@ -71,47 +63,37 @@ export const sitescoop: ProjectDetail = {
             ],
         },
         {
-            title: "데이터 필터링 기능 개발",
+            title: "조건 기반 데이터 필터링 로직 구현",
             subtasks: [
                 {
-                    title: "사용자가 원하는 키워드를 기준으로 <strong>포함(AND), 선택(OR), 제외(NOT)</strong> 조건을 설정할 수 있는 필터링 로직 구현",
+                    title: "키워드 기반 조건식(AND / OR / NOT) 조합이 가능한 필터링 기능 개발",
+                },
+                {
+                    title: "필터 조합 시 예외 케이스를 고려한 로직 설계로 정확도 및 유연성 확보",
                 },
             ],
         },
         {
-            title: "핵심 로직의 <strong>단위 테스트</strong> 수행",
+            title: "핵심 로직 <strong>모듈화 및 단위 테스트</strong> 수행",
             subtasks: [
                 {
-                    title: "암·복호화 로직 모듈화 및 테스트",
-                    subtasks: [
-                        {
-                            title: "암·복호화 로직을 <strong>독립적인 모듈</strong>로 분리하여 재사용성과 테스트 가능성 향상",
-                        },
-                        {
-                            title: "다양한 데이터 구조에서 암·복호화가 정상적으로 작동하는지 검증하여 데이터 무결성 보장",
-                        },
-                    ],
+                    title: "암·복호화 로직과 필터링 로직을 독립 모듈로 분리하여 재사용성과 테스트 가능성 강화",
                 },
                 {
-                    title: "데이터 필터링 로직 테스트",
-                    subtasks: [
-                        {
-                            title: "AND, OR, NOT 조건 조합 테스트를 수행하여 엣지 케이스에서도 정확한 필터링이 적용됨을 검증",
-                        },
-                    ],
+                    title: "다양한 데이터 구조에 대해 단위 테스트 작성 → 데이터 무결성과 엣지 케이스에 대한 안정성 검증",
                 },
             ],
         },
     ],
     troubleshootings: [
         {
-            title: "RSA 키 생성 최적화",
+            title: "초기 화면 렌더링 최적화",
             subtasks: [
                 {
-                    title: "<strong>문제:</strong> RSA 키 생성 시, 복잡한 연산으로 인해 메인 스레드가 블로킹되어 화면 멈춤 현상 발생",
+                    title: "<strong>문제:</strong> RSA 키 생성 로직이 메인 스레드를 블로킹해, 초기 화면 렌더링이 지연됨",
                 },
                 {
-                    title: "<strong>해결:</strong> Web Worker를 활용해 <strong>RSA 키 생성 작업을 메인 스레드에서 분리</strong>, 비동기 방식으로 수행하여 사용자 인터페이스가 끊김 없이 원활하게 동작하도록 개선",
+                    title: "<strong>해결:</strong> Web Worker를 활용해 RSA 키 생성을 비동기화하여 초기 화면 FCP를 <strong>평균 3.29s → 0.16s로 개선</strong>",
                 },
             ],
         },
@@ -206,15 +188,7 @@ export const lingpick: ProjectDetail = {
                     title: "<strong>해결:</strong> 실시간 데이터 반영보다는 빠른 피드백이 중요하다고 판단. Tanstack Query의 <strong>Optimistic Updates</strong> 기능을 사용해 좋아요가 눌린 링크의 숫자만 변경.",
                 },
                 {
-                    title: "<strong>성과:</strong>",
-                    subtasks: [
-                        {
-                            title: "피드에서 좋아요 클릭 후 사용자 액션이 반응되기까지 <strong>기존 1070ms에서 36ms</strong>로 개선",
-                        },
-                        {
-                            title: "사용자 액션에 대한 요청을 서버에 보내지 않고 클라이언트에서 즉각적으로 처리하여 서버 부하를 줄이고 리소스 소비 최적화",
-                        },
-                    ],
+                    title: "<strong>성과:</strong> 피드에서 좋아요 클릭 후 사용자 액션이 반응되기까지 <strong>기존 1070ms에서 36ms</strong>로 개선",
                 },
             ],
         },
@@ -242,7 +216,7 @@ export const lingpick: ProjectDetail = {
                     ],
                 },
                 {
-                    title: "<strong>성과:</strong> 추가된 아이템만 렌더링하도록 최적화해 무한스크롤 성능 개선",
+                    title: "<strong>성과:</strong> <strong>추가된 아이템만 렌더링하도록 최적화</strong>해 무한스크롤 성능 개선",
                 },
             ],
         },
@@ -323,9 +297,6 @@ export const pinnflag: ProjectDetail = {
                             title: "View: UI를 구성하고 ViewModel로부터 받은 데이터를 표시하며, 사용자의 입력을 ViewModel로 전달",
                         },
                     ],
-                },
-                {
-                    title: "각 파일은 300줄 이하, 함수는 20줄 이하로 제한하여 코드 가독성을 높이고, 책임 분리를 명시적으로 적용",
                 },
             ],
         },
